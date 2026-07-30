@@ -1,0 +1,171 @@
+import { PrismaService } from '../prisma/prisma.service';
+import { FilesService } from '../files/files.service';
+import { CreateEmployeeDto } from './dto/create-employee.dto';
+import { UpdateEmployeeDto } from './dto/update-employee.dto';
+import { Role } from '@prisma/client';
+export declare class EmployeesService {
+    private prisma;
+    private filesService;
+    constructor(prisma: PrismaService, filesService: FilesService);
+    create(createEmployeeDto: CreateEmployeeDto, creatorRole: Role, creatorDepartmentId: string | undefined, creatorId: string, files?: any): Promise<{
+        firstName: string;
+        lastName: string;
+        gender: import(".prisma/client").$Enums.Gender;
+        phone: string | null;
+        address: string | null;
+        emergencyContact: string | null;
+        permanentAddress: string | null;
+        jobTitle: string | null;
+        salary: number | null;
+        joinDate: Date | null;
+        dob: Date | null;
+        bloodGroup: string | null;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        userId: string;
+        managerId: string | null;
+        shiftEndTime: string | null;
+    }>;
+    findAll(user: any): Promise<({
+        user: {
+            department: {
+                id: string;
+                createdAt: Date;
+                updatedAt: Date;
+                name: string;
+            } | null;
+        } & {
+            email: string;
+            password: string;
+            departmentId: string | null;
+            id: string;
+            role: import(".prisma/client").$Enums.Role;
+            createdAt: Date;
+            updatedAt: Date;
+            profileImage: string | null;
+        };
+    } & {
+        firstName: string;
+        lastName: string;
+        gender: import(".prisma/client").$Enums.Gender;
+        phone: string | null;
+        address: string | null;
+        emergencyContact: string | null;
+        permanentAddress: string | null;
+        jobTitle: string | null;
+        salary: number | null;
+        joinDate: Date | null;
+        dob: Date | null;
+        bloodGroup: string | null;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        userId: string;
+        managerId: string | null;
+        shiftEndTime: string | null;
+    })[]>;
+    findOne(id: string, user: any): Promise<{
+        user: {
+            email: string;
+            password: string;
+            departmentId: string | null;
+            id: string;
+            role: import(".prisma/client").$Enums.Role;
+            createdAt: Date;
+            updatedAt: Date;
+            profileImage: string | null;
+        };
+    } & {
+        firstName: string;
+        lastName: string;
+        gender: import(".prisma/client").$Enums.Gender;
+        phone: string | null;
+        address: string | null;
+        emergencyContact: string | null;
+        permanentAddress: string | null;
+        jobTitle: string | null;
+        salary: number | null;
+        joinDate: Date | null;
+        dob: Date | null;
+        bloodGroup: string | null;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        userId: string;
+        managerId: string | null;
+        shiftEndTime: string | null;
+    }>;
+    findMe(userId: string): Promise<({
+        user: {
+            email: string;
+            password: string;
+            departmentId: string | null;
+            id: string;
+            role: import(".prisma/client").$Enums.Role;
+            createdAt: Date;
+            updatedAt: Date;
+            profileImage: string | null;
+        };
+    } & {
+        firstName: string;
+        lastName: string;
+        gender: import(".prisma/client").$Enums.Gender;
+        phone: string | null;
+        address: string | null;
+        emergencyContact: string | null;
+        permanentAddress: string | null;
+        jobTitle: string | null;
+        salary: number | null;
+        joinDate: Date | null;
+        dob: Date | null;
+        bloodGroup: string | null;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        userId: string;
+        managerId: string | null;
+        shiftEndTime: string | null;
+    }) | null>;
+    update(id: string, updateEmployeeDto: UpdateEmployeeDto, user: any, files?: any): Promise<{
+        firstName: string;
+        lastName: string;
+        gender: import(".prisma/client").$Enums.Gender;
+        phone: string | null;
+        address: string | null;
+        emergencyContact: string | null;
+        permanentAddress: string | null;
+        jobTitle: string | null;
+        salary: number | null;
+        joinDate: Date | null;
+        dob: Date | null;
+        bloodGroup: string | null;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        userId: string;
+        managerId: string | null;
+        shiftEndTime: string | null;
+    } | null>;
+    remove(id: string, user: any): Promise<void>;
+    upsertForUser(userId: string, data: any, user: any, files?: any): Promise<{
+        firstName: string;
+        lastName: string;
+        gender: import(".prisma/client").$Enums.Gender;
+        phone: string | null;
+        address: string | null;
+        emergencyContact: string | null;
+        permanentAddress: string | null;
+        jobTitle: string | null;
+        salary: number | null;
+        joinDate: Date | null;
+        dob: Date | null;
+        bloodGroup: string | null;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        userId: string;
+        managerId: string | null;
+        shiftEndTime: string | null;
+    } | null>;
+}
